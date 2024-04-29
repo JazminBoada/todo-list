@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+/*Propiedades del header*/
+.header {
+  background: #363d56;
+}
+
+.header img {
+  width: 50px;
+}
+
+.title {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  padding: 15px;
+  font-weight: 400;
+}
+
+/*Centro la caja principal del task*/
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  margin: 100px auto 20px;
+  padding: 10px 30px 70px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ebedf3;
+  padding-left: 20px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+}
+
+.row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+}
+
+button {
+  background-color: #363d56;
+  color: white;
+  padding: 16px 40px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/*Propiedades de los tasks*/
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  opacity: 0; /* Hago que los nuevos elementos sean inicialmente transparentes */
+  transition: opacity 0.3s ease; /* Agrego transición para la opacidad */
+}
+
+/*Agrego el circulo que simula el check*/
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  background-image: url(img/circle-2.svg);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+/*Texto tachado al hacer check*/
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(img/tick-circle.svg);
+  color: #363d56;
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  opacity: 0; /* Hago que los nuevos elementos sean inicialmente transparentes */
+  transition: opacity 0.3s ease; /* Agrego transición para la opacidad */
+}
+
+ul li span:hover {
+  background: #edeef0;
+}
+
+@media only screen and (max-width: 320px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .todo-app {
+    margin: 50px auto 20px;
+    padding: 10px 15px 70px;
+  }
+
+  .row {
+    padding-left: 15px;
+  }
+
+  button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  ul li {
+    font-size: 15px;
+    padding: 10px 8px 10px 40px;
+  }
+
+  ul li::before {
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    left: 5px;
+  }
+
+  ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
