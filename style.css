@@ -1,33 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lora", serif;
 }
 
 .container {
   width: 100%;
   height: 100vh;
+  background: #f2e8cf;
 }
 
 /*Propiedades del header*/
 .header {
-  background: #363d56;
-}
-
-.header img {
-  width: 50px;
+  background: #a0a083;
+  height: 150px;
 }
 
 .title {
   color: white;
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  justify-content: center;
+  font-size: 4rem;
   padding: 15px;
-  font-weight: 400;
+  font-weight: 200;
+  padding-bottom: 2px;
+}
+
+h2 {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  padding-bottom: 15px;
 }
 
 /*Centro la caja principal del task*/
@@ -42,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ebedf3;
+  background: #fff;
   padding-left: 20px;
   border-radius: 30px;
   margin-bottom: 25px;
@@ -57,13 +66,13 @@
 }
 
 button {
-  background-color: #363d56;
+  background-color: #baa587;
   color: white;
-  padding: 16px 40px;
+  padding: 10px 40px;
   border: none;
   outline: none;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -78,6 +87,7 @@ ul li {
   padding: 12px 8px 12px 50px;
   user-select: none;
   cursor: pointer;
+  border-bottom: 1px solid #baa587;
   position: relative;
   opacity: 0; /* Hago que los nuevos elementos sean inicialmente transparentes */
   transition: opacity 0.3s ease; /* Agrego transición para la opacidad */
@@ -87,12 +97,12 @@ ul li {
 ul li::before {
   content: "";
   position: absolute;
-  height: 28px;
+  height: 30px;
   width: 28px;
   background-image: url(img/circle-2.svg);
   background-size: cover;
   background-position: center;
-  top: 12px;
+  top: 8px;
   left: 8px;
 }
 
@@ -107,30 +117,24 @@ ul li.checked::before {
   color: #363d56;
 }
 
+/*Boton X*/
 ul li span {
   position: absolute;
   right: 0;
   top: 5px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   font-size: 22px;
-  color: #555;
-  line-height: 40px;
+  color: white;
+  background: #baa587;
+  line-height: 35px;
   text-align: center;
   border-radius: 50%;
   opacity: 0; /* Hago que los nuevos elementos sean inicialmente transparentes */
   transition: opacity 0.3s ease; /* Agrego transición para la opacidad */
 }
 
-ul li span:hover {
-  background: #edeef0;
-}
-
 @media only screen and (max-width: 320px) {
-  .title {
-    font-size: 1.5rem;
-  }
-
   .todo-app {
     margin: 50px auto 20px;
     padding: 10px 15px 70px;
