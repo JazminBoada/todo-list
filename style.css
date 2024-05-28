@@ -17,6 +17,7 @@
 .header {
   background: #a0a083;
   height: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -55,6 +56,7 @@ h2 {
   padding-left: 20px;
   border-radius: 30px;
   margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .row input {
@@ -74,6 +76,7 @@ button {
   border-radius: 30px;
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:active {
